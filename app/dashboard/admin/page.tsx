@@ -11,8 +11,7 @@ export default function AdminDashboard() {
     return (
         <main className="min-h-screen bg-slate-100">
             <DashboardSidebar
-                portal="admin"
-                activePath="/dashboard/admin"
+                portal="admin"  
                 menuItems={[
                     {
                         label: "Dashboard",
@@ -48,7 +47,7 @@ export default function AdminDashboard() {
                     },
                 ]}
             />
-            <section className="p-6 md:ml-64 md:p-10">
+            <section className="p-6 md:p-10">
                 <header className="mb-8">
                     <h2 className="text-2xl font-bold text-slate-800">
                         Dashboard Admin

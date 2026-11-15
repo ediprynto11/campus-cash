@@ -1,45 +1,7 @@
-import DashboardSidebar from "@/components/DashboardSidebar";
-
-const menuItems = [
-    "Dashboard",
-    "Ajukan Pembiayaan",
-    "Riwayat Pengajuan",
-    "Cicilan Saya",
-    "Riwayat Pembayaran",
-];
-
 export default function StudentDashboard() {
     return (
         <main className="min-h-screen bg-slate-100">
-
-            <DashboardSidebar
-                portal="student"
-                activePath="/dashboard/student"
-                menuItems={[
-                    {
-                        label: "Dashboard",
-                        href: "/dashboard/student",
-                    },
-                    {
-                        label: "Ajukan Pembiayaan",
-                        href: "/dashboard/student/apply",
-                    },
-                    {
-                        label: "Riwayat Pengajuan",
-                        href: "/dashboard/student/applications",
-                    },
-                    {
-                        label: "Cicilan Saya",
-                        href: "/dashboard/student/installments",
-                    },
-                    {
-                        label: "Riwayat Pembayaran",
-                        href: "/dashboard/student/payments",
-                    },
-                ]}
-            />
-
-            <section className="p-6 md:ml-64 md:p-10">
+            <section className="p-6 md:p-10">
                 <header className="mb-8 flex items-center justify-between">
                     <div>
                         <h2 className="text-2xl font-bold text-slate-800">
