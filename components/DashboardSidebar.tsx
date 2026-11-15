@@ -1,5 +1,7 @@
+"use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type MenuItem = {
   label: string;
@@ -9,19 +11,18 @@ type MenuItem = {
 type DashboardSidebarProps = {
   portal: "student" | "admin";
   menuItems: MenuItem[];
-  activePath: string;
 };
 
 export default function DashboardSidebar({
   portal,
   menuItems,
-  activePath,
 }: DashboardSidebarProps) {
   const isAdmin = portal === "admin";
+  const pathname = usePathname();
 
   return (
     <aside
-      className={`fixed hidden h-screen w-64 p-6 shadow-sm md:block ${
+      className={`fixed left-0 top-0 z-20 block h-screen w-64 p-6 shadow-sm ${
         isAdmin ? "bg-slate-900 text-white" : "bg-white"
       }`}
     >
@@ -35,7 +36,7 @@ export default function DashboardSidebar({
 
       <nav className="space-y-2">
         {menuItems.map((item) => {
-          const isActive = item.href === activePath;
+          const isActive = pathname === item.href;
 
           return (
             <Link
